@@ -1,1 +1,1 @@
-# predict-autism
+# App to predict autism
