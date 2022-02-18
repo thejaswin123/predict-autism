@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autism Prediction in children using Machine Learning</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Take the quiz</span></h2>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Age in months"><br>
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex">
+          <option selected>----select option----</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select><br>
+
+        <label for="A1">Does you child look at you when call his/her name?</label>
+        <select id="A1" name="A1">
+          <option selected>----select option----</option>
+          <option value="0">Always</option>
+          <option value="0">Usually</option>
+          <option value="1">Sometimes</option>
+          <option value="1">Rarely</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A2">How easy is it for you to get eye contact with your child?</label>
+        <select id="A2" name="A2">
+          <option selected>----select option----</option>
+          <option value="0">Very easy</option>
+          <option value="0">Quite easy</option>
+          <option value="1">Quite difficult</option>
+          <option value="1">Very difficult</option>
+          <option value="1">Impossible</option>
+        </select><br>
+        <label for="A3">Does your child point to indicate that she/he wants something? (Like a toy that is out of reach)</label>
+        <select id="A3" name="A3">
+          <option selected>----select option----</option>
+          <option value="0">Many times a day</option>
+          <option value="0">A few times a day</option>
+          <option value="1">A few times a week</option>
+          <option value="1">Less than once a week</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A4">Does your child point to share interest with you? (Like pointing at an interesting sight)</label>
+        <select id="A4" name="A4">
+          <option selected>----select option----</option>
+          <option value="0">Many times a day</option>
+          <option value="0">A few times a day</option>
+          <option value="1">A few times a week</option>
+          <option value="1">Less than once a week</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A5">Does your child pretend? (Like care for a doll or talk on a toy phone)</label>
+        <select id="A5" name="A5">
+          <option selected>----select option----</option>
+          <option value="0">Many times a day</option>
+          <option value="0">A few times a day</option>
+          <option value="1">A few times a week</option>
+          <option value="1">Less than once a week</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A6">Does your child follow where you are looking?</label>
+        <select id="A6" name="A6">
+          <option selected>----select option----</option>
+          <option value="0">Many times a day</option>
+          <option value="0">A few times a day</option>
+          <option value="1">A few times a week</option>
+          <option value="1">Less than once a week</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A7">If you or someone in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking the hair or hugging)</label>
+        <select id="A7" name="A7">
+          <option value="0">Always</option>
+          <option value="0">Usually</option>
+          <option value="1">Sometimes</option>
+          <option value="1">Rarely</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A8">Would you describe your child's first words as:</label>
+        <select id="A8" name="A8">
+          <option selected>----select option----</option>
+          <option value="0">very typical</option>
+          <option value="0">quite typical</option>
+          <option value="1">slightly unusual</option>
+          <option value="1">very unusual</option>
+          <option value="1">My child doesn't speak</option>
+        </select><br>
+        <label for="A9">Does your child use simple gestures? (like wave goodbye)</label>
+        <select id="A9" name="A9">
+          <option selected>----select option----</option>
+          <option value="0">Many times a day</option>
+          <option value="0">A few times a day</option>
+          <option value="1">A few times a week</option>
+          <option value="1">Less than once a week</option>
+          <option value="1">Never</option>
+        </select><br>
+        <label for="A10">Does your child stare at something with no apparent purpose?</label>
+        <select id="A10" name="A10">
+          <option selected>----select option----</option>
+          <option value="1">Many times a day</option>
+          <option value="1">A few times a day</option>
+          <option value="1">A few times a week</option>
+          <option value="0">Less than once a week</option>
+          <option value="0">Never</option>
+        </select><br>
+
+        <label for="Ethnicity">Ethnicity</label>
+        <select id="Ethnicity" name="Ethnicity">
+          <option selected>----select option----</option>
+          <option value="0">Hispanic</option>
+          <option value="1">Latino</option>
+          <option value="2">Native Indian</option>
+          <option value="3">Others</option>
+          <option value="4">Pacifica</option>
+          <option value="5">White European</option>
+          <option value="6">asian</option>
+          <option value="7">black</option>
+          <option value="8">middle eastern</option>
+          <option value="9">mixed</option>
+          <option value="10">south asian</option>
+        </select><br>
+
+        <label for="Jaundice">Jaundice</label>
+        <select id="Jaundice" name="Jaundice">
+          <option selected>----select option----</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br>
+
+        <label for="Family_mem_with_ASD">Family_mem_with_ASD</label>
+        <select id="Family_mem_with_ASD" name="Family_mem_with_ASD">
+          <option selected>----select option----</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br>
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+</body>
+
+</html>

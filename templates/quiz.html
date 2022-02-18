@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>
+        Autism Quiz (Toddlers)
+    </title>
+
+
+    <style>
+ 
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: #7c0863;
+            font-family: Verdana;
+            text-align: center;
+        }
+ 
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+ 
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+ 
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"] {
+            display: inline-block;
+            width: auto;
+        }
+ 
+        /* Styling Button */
+        button {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1 style="color:white;">Autism Survey</h1>
+  
+    <!-- Create Form -->
+    <form action="{{ url_for('predict')}}" method="POST">
+ 
+        <!-- Details -->
+          
+        <div class="form-control">
+            <label for="age" id="age" >
+                Age
+            </label>
+ 
+            <!-- Input Type Text -->
+            <input type="text"
+                   name="age"
+                   placeholder="Enter your child's age in months" />
+        </div>
+  
+        <div class="form-control">
+            <label for="sex" id="sex">
+                Sex
+            </label>
+            <!-- Dropdown options -->
+            <select id="sex" name="sex">
+                <option selected>----select option----</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            
+        </div>
+  
+        <div class="form-control">
+            
+
+            <label for="A1">Does you child look at you when call his/her name?</label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="A1">
+                <input type="radio"
+                       value="0"
+                       name="A1">Always</input>
+            </label>
+            <label for="A1">
+                <input type="radio"
+                       value="0"
+                       name="A1">Usually</input>
+            </label>
+
+            <label for="A1">
+                <input type="radio"
+                       value="1"
+                       name="A1">Sometimes</input>
+            </label>
+
+            <label for="A1">
+                <input type="radio"
+                       value="1"
+                       name="A1">Rarely</input>
+            </label>
+
+            <label for="A1">
+                <input type="radio"
+                       value="1"
+                       name="A1">Never</input>
+            </label>
+        </div>
+
+        <div class="form-control">
+
+        <label for="A2">How easy is it for you to get eye contact with your child?</label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="A2">
+                <input type="radio"
+                       value="0"
+                       name="A2">Very easy</input>
+            </label>
+            <label for="A2">
+                <input type="radio"
+                       value="0"
+                       name="A2">Quite easy</input>
+            </label>
+
+            <label for="A2">
+                <input type="radio"
+                       value="1"
+                       name="A2">Quite difficult</input>
+            </label>
+
+            <label for="A2">
+                <input type="radio"
+                       value="1"
+                       name="A2">Very difficult</input>
+            </label>
+
+            <label for="A2">
+                <input type="radio"
+                       value="1"
+                       name="A2">Impossible</input>
+            </label>
+        </div>
+
+        <div class="form-control">
+
+        <label for="A3">Does your child point to indicate that she/he wants something? (Like a toy that is out of reach)</label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="A3">
+                <input type="radio"
+                       value="0"
+                       name="A3">Many times a day</input>
+            </label>
+            <label for="A3">
+                <input type="radio"
+                       value="0"
+                       name="A3">A few times a day</input>
+            </label>
+
+            <label for="A3">
+                <input type="radio"
+                       value="1"
+                       name="A3">A few times a week</input>
+            </label>
+
+            <label for="A3">
+                <input type="radio"
+                       value="1"
+                       name="A3">Less than once a week</input>
+            </label>
+
+            <label for="A3">
+                <input type="radio"
+                       value="1"
+                       name="A3">Never</input>
+            </label>
+        </div>
+
+        <div class="form-control">
+        <label for="A4">Does your child point to share interest with you? (Like pointing at an interesting sight)</label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="A4">
+                <input type="radio"
+                       value="0"
+                       name="A4">Many times a day</input>
+            </label>
+            <label for="A4">
+                <input type="radio"
+                       value="0"
+                       name="A4">A few times a day</input>
+            </label>
+
+            <label for="A4">
+                <input type="radio"
+                       value="1"
+                       name="A4">A few times a week</input>
+            </label>
+
+            <label for="A4">
+                <input type="radio"
+                       value="1"
+                       name="A4">Less than once a week</input>
+            </label>
+
+            <label for="A4">
+                <input type="radio"
+                       value="1"
+                       name="A4">Never</input>
+            </label>
+        </div>
+
+        <div class="form-control">
+            <label for="A5">Does your child pretend? (Like care for a doll or talk on a toy phone)</label>
+     
+                <!-- Input Type Radio Button -->
+                <label for="A5">
+                    <input type="radio"
+                           value="0"
+                           name="A5">Many times a day</input>
+                </label>
+                <label for="A5">
+                    <input type="radio"
+                           value="0"
+                           name="A5">A few times a day</input>
+                </label>
+    
+                <label for="A5">
+                    <input type="radio"
+                           value="1"
+                           name="A5">A few times a week</input>
+                </label>
+    
+                <label for="A5">
+                    <input type="radio"
+                           value="1"
+                           name="A5">Less than once a week</input>
+                </label>
+    
+                <label for="A5">
+                    <input type="radio"
+                           value="1"
+                           name="A5">Never</input>
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label for="A6">Does your child follow where you are looking?</label>
+         
+                    <!-- Input Type Radio Button -->
+                    <label for="A6">
+                        <input type="radio"
+                               value="0"
+                               name="A6">Many times a day</input>
+                    </label>
+                    <label for="A6">
+                        <input type="radio"
+                               value="0"
+                               name="A6">A few times a day</input>
+                    </label>
+        
+                    <label for="A6">
+                        <input type="radio"
+                               value="1"
+                               name="A6">A few times a week</input>
+                    </label>
+        
+                    <label for="A6">
+                        <input type="radio"
+                               value="1"
+                               name="A6">Less than once a week</input>
+                    </label>
+        
+                    <label for="A6">
+                        <input type="radio"
+                               value="1"
+                               name="A6">Never</input>
+                    </label>
+                </div>
+            
+            <div class="form-control">
+                
+                <label for="A7">If you or someone in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking the hair or hugging)</label>
+         
+                    <!-- Input Type Radio Button -->
+                    <label for="A7">
+                        <input type="radio"
+                               value="0"
+                               name="A7">Always</input>
+                    </label>
+                    <label for="A7">
+                        <input type="radio"
+                               value="0"
+                               name="A7">Usually</input>
+                    </label>
+        
+                    <label for="A7">
+                        <input type="radio"
+                               value="1"
+                               name="A7">Sometimes</input>
+                    </label>
+        
+                    <label for="A7">
+                        <input type="radio"
+                               value="1"
+                               name="A7">Rarely</input>
+                    </label>
+        
+                    <label for="A7">
+                        <input type="radio"
+                               value="1"
+                               name="A7">Never</input>
+                    </label>
+                </div>
+        
+                <div class="form-control">
+                
+                    <label for="A8">Would you describe your child's first words as:</label>
+                    
+                        <!-- Input Type Radio Button -->
+                        <label for="A8">
+                            <input type="radio"
+                                   value="0"
+                                   name="A8">Always</input>
+                        </label>
+                        <label for="A8">
+                            <input type="radio"
+                                   value="0"
+                                   name="A8">Usually</input>
+                        </label>
+            
+                        <label for="A8">
+                            <input type="radio"
+                                   value="1"
+                                   name="A8">Sometimes</input>
+                        </label>
+            
+                        <label for="A8">
+                            <input type="radio"
+                                   value="1"
+                                   name="A8">Rarely</input>
+                        </label>
+            
+                        <label for="A8">
+                            <input type="radio"
+                                   value="1"
+                                   name="A8">Never</input>
+                        </label>
+                    
+                    </div>
+            
+            <div class="form-control">
+                <label for="A9">Does your child follow where you are looking?</label>
+                 
+                            <!-- Input Type Radio Button -->
+                            <label for="A9">
+                                <input type="radio"
+                                       value="0"
+                                       name="A9">Many times a day</input>
+                            </label>
+                            <label for="A9">
+                                <input type="radio"
+                                       value="0"
+                                       name="A9">A few times a day</input>
+                            </label>
+                
+                            <label for="A9">
+                                <input type="radio"
+                                       value="1"
+                                       name="A9">A few times a week</input>
+                            </label>
+                
+                            <label for="A9">
+                                <input type="radio"
+                                       value="1"
+                                       name="A9">Less than once a week</input>
+                            </label>
+                
+                            <label for="A9">
+                                <input type="radio"
+                                       value="1"
+                                       name="A9">Never</input>
+                            </label>
+                        </div>
+
+            <div class="form-control">
+                <label for="A10">Does your child stare at something with no apparent purpose?</label>
+                     
+                                <!-- Input Type Radio Button -->
+                    <label for="A10">
+                            <input type="radio"
+                                value="1"
+                                name="A10">Many times a day</input>
+                            </label>
+                                <label for="A10">
+                                    <input type="radio"
+                                           value="1"
+                                           name="A10">A few times a day</input>
+                                </label>
+                    
+                                <label for="A10">
+                                    <input type="radio"
+                                           value="1"
+                                           name="A10">A few times a week</input>
+                                </label>
+                    
+                                <label for="A10">
+                                    <input type="radio"
+                                           value="0"
+                                           name="A10">Less than once a week</input>
+                                </label>
+                    
+                                <label for="A10">
+                                    <input type="radio"
+                                           value="0"
+                                           name="A10">Never</input>
+                                </label>
+                            </div>
+
+                            <div class="form-control">
+                            <label for="Ethnicity">Ethnicity</label>
+                            <select id="Ethnicity" name="Ethnicity">
+                              <option selected>----select option----</option>
+                              <option value="0">Hispanic</option>
+                              <option value="1">Latino</option>
+                              <option value="2">Native Indian</option>
+                              <option value="3">Others</option>
+                              <option value="4">Pacifica</option>
+                              <option value="5">White European</option>
+                              <option value="6">asian</option>
+                              <option value="7">black</option>
+                              <option value="8">middle eastern</option>
+                              <option value="9">mixed</option>
+                              <option value="10">south asian</option>
+                            </select>
+                            </div>
+                
+        <div class="form-control">
+        <label for="Jaundice">Jaundice</label>
+        <select id="Jaundice" name="Jaundice">
+          <option selected>----select option----</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        </div>
+
+        <div class="form-control">
+        <label for="Family_mem_with_ASD">Family_mem_with_ASD</label>
+        <select id="Family_mem_with_ASD" name="Family_mem_with_ASD">
+          <option selected>----select option----</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        </div>
+
+        <button type="submit" value="Predict">
+            Submit
+        </button>
+
+        </form>
+
+</body>
+</html>
